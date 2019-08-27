@@ -213,8 +213,8 @@ int main() {
 
   int min = ROWS >= COLUMNS ? COLUMNS : ROWS;
   int THREADS;
-  if (min >= 1025)
-    THREADS = 1024;
+  if (min >= BLOCK_SIZE - 1)
+    THREADS = BLOCK_SIZE;
   else
     THREADS = min - 1;
 
